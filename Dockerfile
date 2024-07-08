@@ -1,4 +1,4 @@
-FROM openjdk:11-jdk-slim-buster AS build
+FROM openjdk:11-jdk-slim-buster@sha256:863ce6f3c27a0a50b458227f23beadda1e7178cda0971fa42b50b05d9a5dcf55 AS build
 
 RUN apt-get update -y && \
     apt-get install -y git curl gnupg
@@ -19,7 +19,7 @@ RUN gpg --keyserver https://secchannel.rsk.co/SUPPORT.asc --recv-keys 1DC9157991
     modifier=$(sed -n 's/^modifier=//p' "$file" | tr -d "\"'") && \
     cp "rskj-core/build/libs/rskj-core-$version_number-$modifier-all.jar" rsk.jar
 
-FROM openjdk:11-jre-slim-buster
+FROM openjdk:11-jre-slim-buster@sha256:d030d27043616146d95daafc3a3b588cbfd43311cf8a164177c949cad4f2dab3
 LABEL org.opencontainers.image.authors="ops@iovlabs.org"
 
 RUN useradd -ms /sbin/nologin -d /var/lib/rsk rsk
