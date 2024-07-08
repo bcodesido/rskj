@@ -1,4 +1,4 @@
-FROM openjdk:11-jdk-slim-buster@sha256:863ce6f3c27a0a50b458227f23beadda1e7178cda0971fa42b50b05d9a5dcf55 AS build
+FROM openjdk:18-jdk-slim-buster@sha256:596bee0e3ed6c537b2c92cc53089772d880fb3f4413e438dcc147d61d52cc960 AS build
 
 RUN apt-get update -y && \
     apt-get install -y git curl gnupg
