@@ -10,6 +10,9 @@ on:
     branches:
       - "**"
 
+permissions:
+  contents: read
+
 jobs:
   build-rskj:
     runs-on: ubuntu-latest
